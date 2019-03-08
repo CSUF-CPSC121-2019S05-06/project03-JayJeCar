@@ -2,9 +2,9 @@
 
 This is milestone 3 of the [TuffyNotes Project](https://docs.google.com/document/d/14qiyhHtXpZOkVqHdUmLjLu1OWcBhQijvqybHtgsEWhI/edit?usp=sharing).
 
-# Pre-requesites
+# Prerequesites
 
-Class `Note` from milestone 2 containing:
+Class `Note` from milestone 2, containing:
  - public *accessors* named `getTitle` and `getBody`
  - public *mutators* named `setTitle` and `setBody`
 
