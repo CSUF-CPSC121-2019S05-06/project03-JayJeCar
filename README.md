@@ -14,7 +14,7 @@ Global function `createNote` from milestone 2
 
 Provide functionality to list all the `Note` objects that were created, and view a particular `Note` object using its index.
 
-Implement the `listNotes` function that takes in an array of `Note` objects and the size of that array as its input. The function does not return anything, but it displays on screen the list of notes in the array that was passed. It should show an informational message if no notes have been created yet. Specifically, it should say *No notes have been added.*
+Implement the `listNotes` function that takes in an array of `Note` objects and the size of that array as its input. The function does not return anything, but it displays on screen the list of note titles from the array that was passed in. It should show an informational message if no notes have been created yet. Specifically, it should say *No notes have been added.*
 
 Implement the `viewNote` function that also takes in an array of `Note` objects and the size of the array as its input. This function should first call the `listNotes` function to show all the notes available.
 
