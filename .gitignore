@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+tuffynotes
+main
+
+# Unit test
+compile_commands.json
+unittest
