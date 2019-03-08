@@ -87,6 +87,20 @@ Geddy Lee, Alex Lifeson, Neil Peart
 [L] List notes
 [V] View note
 [E] Exit
+Choice: v
+
+Notes
+1. Grocery list
+2. Band mates
+
+Please input note index: 0
+
+Invalid note index.
+
+[C] Create a note
+[L] List notes
+[V] View note
+[E] Exit
 Choice: j
 
 Invalid choice. Please try again.
