@@ -12,19 +12,23 @@ Global function `createNote` from milestone 2
 
 # Requirements
 
-Provide functionality to list all the `Note` objects that were created and view a particular `Note` object using its index.
+Provide functionality to list all the `Note` objects that were created, and view a particular `Note` object using its index.
 
-Implement the `listNotes` function that takes in an array of `Note` objects and the size of that array as its input. The function does not return anything, but it displays on screen the list of notes in the array that was passed. It should show an error message if no notes have been created yet. Specifically, it should say *No notes have been added.*
+Implement the `listNotes` function that takes in an array of `Note` objects and the size of that array as its input. The function does not return anything, but it displays on screen the list of notes in the array that was passed. It should show an informational message if no notes have been created yet. Specifically, it should say *No notes have been added.*
 
 Implement the `viewNote` function that also takes in an array of `Note` objects and the size of the array as its input. This function should first call the `listNotes` function to show all the notes available.
 
-If the program already created notes, `viewNote` will then ask the user to select the note they want to view, given its index. Specifically, it should ask: *Please input note index:* The function will use the index to select and show the contents of the note. The format for showing a note is as follows.
+If the program already created notes, `viewNote` will then ask the user to select the note they want to view, given its index. Specifically, it should ask: *Please input note index:*
+
+The function will use the index to select and show the contents of the note. The format for showing a note is as follows.
 
 ```
 [Note title]
 Note body
 ```
-The function does not print anything else if there were no notes created. Also take note that the index in the list of notes begins with 1, but array indices start at 0. Make sure you consider this in your code.
+The function does not print anything else if there were no notes created.
+
+Take note that the index in the list of notes begins with 1, but array indices start at 0. Make sure you consider this in your code.
 
 Finally, the function should display an error message if the user provides an invalid index. Specifically, it should say: *Invalid note index.*
 
