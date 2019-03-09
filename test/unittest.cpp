@@ -69,7 +69,7 @@ TEST(Milestone1, InvalidOptionChoice) {
 
 TEST(Milestone1, ChoiceLoopLowercase) {
   std::string input = "";
-  std::string unittest_output = "Welcome to TuffyNotes!\n";
+  std::string unittest_output = "Welcome to TuffyNotes!";
   char choices[] = {'c', 'e', 'l', 'v', 'L', 'C', 'E'};
   unsigned int note_count = 1;
   std::string note_list = "\nNotes\n";
@@ -77,13 +77,13 @@ TEST(Milestone1, ChoiceLoopLowercase) {
   do {
     choice = choices[rand() % 4];
     unittest_output +=
-        "[C] Create a note\n[L] List notes\n[V] View note\n[E] Exit\nChoice: ";
+        "\n[C] Create a note\n[L] List notes\n[V] View note\n[E] Exit\nChoice: ";
     std::string s_choice(1, choice);
     input += s_choice + "\\n";
     switch (choice) {
     case 'c':
       unittest_output += "\nPlease enter the note's title: ";
-      unittest_output += "Please enter the note: \nNote added!\n\n";
+      unittest_output += "Please enter the note: \nNote added!\n";
       input += "t\\nb\\n";
       note_list += std::to_string(note_count) + ". t\n";
       note_count++;
@@ -92,7 +92,7 @@ TEST(Milestone1, ChoiceLoopLowercase) {
       if (note_count > 1) {
         unittest_output += note_list + "\n";
       } else {
-        unittest_output += "\nNo notes have been added.\n\n";
+        unittest_output += "\nNo notes have been added.\n";
       }
       break;
     case 'v':
@@ -101,14 +101,14 @@ TEST(Milestone1, ChoiceLoopLowercase) {
             note_list + "\nPlease input note index: \n[t]\nb\n\n";
         input += "1\n";
       } else {
-        unittest_output += "\nNo notes have been added.\n\n";
+        unittest_output += "\nNo notes have been added.\n";
       }
       break;
     case 'e':
       unittest_output += "\nThank you for using TuffyNotes!\n";
       break;
     default:
-      unittest_output += "Invalid choice. Please try again.\n\n";
+      unittest_output += "Invalid choice. Please try again.\n";
     }
   } while (choice != 'e');
   ASSERT_DURATION_LE(
@@ -117,7 +117,7 @@ TEST(Milestone1, ChoiceLoopLowercase) {
 
 TEST(Milestone1, ChoiceLoopUppercase) {
   std::string input = "";
-  std::string unittest_output = "Welcome to TuffyNotes!\n";
+  std::string unittest_output = "Welcome to TuffyNotes!";
   char choices[] = {'c', 'e', 'l', 'v', 'C', 'E', 'L', 'V'};
   unsigned int note_count = 1;
   std::string note_list = "\nNotes\n";
@@ -125,13 +125,13 @@ TEST(Milestone1, ChoiceLoopUppercase) {
   do {
     choice = choices[rand() % 4 + 4];
     unittest_output +=
-        "[C] Create a note\n[L] List notes\n[V] View note\n[E] Exit\nChoice: ";
+        "\n[C] Create a note\n[L] List notes\n[V] View note\n[E] Exit\nChoice: ";
     std::string s_choice(1, choice);
     input += s_choice + "\\n";
     switch (choice) {
     case 'C':
       unittest_output += "\nPlease enter the note's title: ";
-      unittest_output += "Please enter the note: \nNote added!\n\n";
+      unittest_output += "Please enter the note: \nNote added!\n";
       input += "t\\nb\\n";
       note_list += std::to_string(note_count) + ". t\n";
       note_count++;
@@ -140,23 +140,23 @@ TEST(Milestone1, ChoiceLoopUppercase) {
       if (note_count > 1) {
         unittest_output += note_list + "\n";
       } else {
-        unittest_output += "\nNo notes have been added.\n\n";
+        unittest_output += "\nNo notes have been added.\n";
       }
       break;
     case 'V':
       if (note_count > 1) {
         unittest_output +=
-            note_list + "\nPlease input note index: \n[t]\nb\n\n";
+            note_list + "\nPlease input note index: \n[t]\nb\n";
         input += "1\n";
       } else {
-        unittest_output += "\nNo notes have been added.\n\n";
+        unittest_output += "\nNo notes have been added.\n";
       }
       break;
     case 'E':
       unittest_output += "\nThank you for using TuffyNotes!\n";
       break;
     default:
-      unittest_output += "Invalid choice. Please try again.\n\n";
+      unittest_output += "Invalid choice. Please try again.\n";
     }
   } while (choice != 'E');
   ASSERT_DURATION_LE(
@@ -191,7 +191,7 @@ TEST(Milestone2, CreateNote) {
   std::string unittest_body = generate_string(10);
   std::string input = unittest_title + "\n" + unittest_body + "\n";
   std::string unittest_output = "\nPlease enter the note's title: ";
-  unittest_output += "Please enter the note: \nNote added!\n\n";
+  unittest_output += "Please enter the note: \nNote added!\n";
   ASSERT_SIO_EQ(input, unittest_output, { your_note_object = createNote(); });
   ASSERT_EQ(your_note_object.getTitle(), unittest_title);
   ASSERT_EQ(your_note_object.getBody(), unittest_body);
@@ -200,7 +200,7 @@ TEST(Milestone2, CreateNote) {
 TEST(Milestone3, ListNotesEmpty) {
   Note empty_array[0];
   ASSERT_DURATION_LE(3, {
-    ASSERT_SIO_EQ("", "\nNo notes have been added.\n\n",
+    ASSERT_SIO_EQ("", "\nNo notes have been added.\n",
                   { listNotes(empty_array, 0); });
   });
 }
@@ -209,7 +209,7 @@ TEST(Milestone3, ListNotesSingle) {
   Note notes[1];
   notes[0].setTitle("Buy groceries");
   ASSERT_DURATION_LE(3, {
-    ASSERT_SIO_EQ("", "\nNotes\n1. Buy groceries\n\n",
+    ASSERT_SIO_EQ("", "\nNotes\n1. Buy groceries\n",
                   { listNotes(notes, 1); });
   });
 }
@@ -222,7 +222,7 @@ TEST(Milestone3, ListNotesMultiple) {
   ASSERT_DURATION_LE(3, {
     ASSERT_SIO_EQ("",
                   "\nNotes\n1. Buy groceries\n2. CPSC 121 guide questions\n3. "
-                  "Group mates list\n\n",
+                  "Group mates list\n",
                   { listNotes(notes, 3); });
   });
 }
@@ -230,7 +230,7 @@ TEST(Milestone3, ListNotesMultiple) {
 TEST(Milestone3, ViewNoteEmpty) {
   Note empty_array[0];
   ASSERT_DURATION_LE(3, {
-    ASSERT_SIO_EQ("", "\nNo notes have been added.\n\n",
+    ASSERT_SIO_EQ("", "\nNo notes have been added.\n",
                   { viewNote(empty_array, 0); });
   });
 }
@@ -244,7 +244,7 @@ TEST(Milestone3, ViewNote) {
     ASSERT_SIO_EQ(
         "2",
         "\nNotes\n1. Group mates list\n2. Buy groceries\n\nPlease input note "
-        "index: \n[Buy groceries]\n1 qt. of milk, 5 apples, 1 dozen eggs\n\n",
+        "index: \n[Buy groceries]\n1 qt. of milk, 5 apples, 1 dozen eggs\n",
         { viewNote(notes, 2); });
   });
 }
@@ -257,7 +257,7 @@ TEST(Milestone3, ViewNoteInvalidIndex) {
   ASSERT_DURATION_LE(3, {
     ASSERT_SIO_EQ("8",
                   "\nNotes\n1. Group mates list\n2. Buy groceries\n\nPlease "
-                  "input note index: \nInvalid note index.\n\n",
+                  "input note index: \nInvalid note index.\n",
                   { viewNote(notes, 2); });
   });
 }
