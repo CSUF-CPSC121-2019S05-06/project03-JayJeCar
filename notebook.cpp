@@ -59,11 +59,11 @@ void viewNote (int num)
   std::cin >> choice;
   for (int choice != 0; choice <= MAX_NUMBER_NOTES; note_index++)
   {
-    viewNote()
+
 
   }
 
-
+/*
     if (n != index && n == 0)
     {
       std::cout << "Invalid note index." << std::endl;
@@ -74,5 +74,5 @@ void viewNote (int num)
     }
     std::cout << "[" <<name of title <<"]" << std::endl;
     std::cout << Note body << std::endl;
-  }
+  }*/
 }
