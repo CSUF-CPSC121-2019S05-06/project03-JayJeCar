@@ -33,27 +33,37 @@ Note createNote()
   return note;
 }
 
-void listNotes(Note note_list[], int MAX_NUMBER_NOTES)
+void listNotes(Note note_list[])
 {
+  Note createNote();
   std::cout << "Notes\n";
-  if (list_notes >= 1)
+  int sum = 0;
+  const in sentinel_value = -1;
+  for (int i = 0; i < MAX_NUMBER_NOTES; i++)
   {
-    while (n < list_notes)
-    std::cout << n << ". " << note_list;
-    n += 1;
+    if (note_list[i] == sentinel_value)
+    {
+      std::cout << "No notes have been added.\n";
+    }
+    sum += note_list[i];
+    std::cout << sum << ". " << note_list[i] << std::endl;
   }
-  else (list_notes == 0)
-  {
-    std::cout << "No notes have been added.\n";
-  }
+
 }
 
-void viewNote (Note note_list[], int MAX_NUMBER_NOTES)
+void viewNote (int num)
 {
-  listNotes(Note note_list[], int MAX_NUMBER_NOTES);
-  if (list_notes >= 1)
+  int choice;
+  listNotes(Note note_list[]);
+  std::cout << "Please input note index: \n";
+  std::cin >> choice;
+  for (int choice != 0; choice <= MAX_NUMBER_NOTES; note_index++)
   {
-    std::cout << "Please input note index: " << n\n;
+    viewNote()
+
+  }
+
+
     if (n != index && n == 0)
     {
       std::cout << "Invalid note index." << std::endl;

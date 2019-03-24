@@ -48,12 +48,11 @@ int main()
         break;
       case 'L':
       case 'l':
-        ADD SOMETHING
-        implement list function
+        list_note[note_list++] = listNotes();
+        break;
       case 'V':
       case 'v':
-        ADD SOMETHING
-        implement view function
+        view_note[] = viewNote();
       case 'E':
       case 'e':
         display_menu = false;
