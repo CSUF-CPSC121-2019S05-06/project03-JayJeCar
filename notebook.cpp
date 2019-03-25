@@ -51,28 +51,16 @@ void listNotes(Note note_list[])
 
 }
 
-void viewNote (int num)
+void viewNote (int nums[], int size)
 {
   int choice;
   listNotes(Note note_list[]);
   std::cout << "Please input note index: \n";
   std::cin >> choice;
-  for (int choice != 0; choice <= MAX_NUMBER_NOTES; note_index++)
+  for (int choice = 0; choice <= MAX_NUMBER_NOTES; choice++)
   {
-
+    std::cout << (choice + 1) << ". ";
+    std::cin >> note_list[choice];
 
   }
-
-/*
-    if (n != index && n == 0)
-    {
-      std::cout << "Invalid note index." << std::endl;
-    }
-    else if (n != int index)
-    {
-      std::cout << "Invalid choice. Please try again." << std::endl;
-    }
-    std::cout << "[" <<name of title <<"]" << std::endl;
-    std::cout << Note body << std::endl;
-  }*/
 }
