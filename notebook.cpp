@@ -54,6 +54,13 @@ void Note viewNote (int nums[], int size) //Third function that uses second func
   listNotes(int nums[], int size); //Calling Second Function
   std::cout << "Please input note index: \n";
   std::cin >> choice;
+  if (choice!=0)
+  {
   std::cout << "[" << nums[choice+1] << "]" << std::endl;
   std::cout << note.getBody(nums[choice]);
+  }
+  else
+  {
+    std::cout << "Invalid note index." << std::endl;
+  }
 }
