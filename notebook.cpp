@@ -33,7 +33,7 @@ Note createNote()
   return note;
 }
 
-void listNotes(Note note_list[])
+void Note listNotes(Note note_list[])
 {
   Note createNote();
   std::cout << "Notes\n";
@@ -51,7 +51,7 @@ void listNotes(Note note_list[])
 
 }
 
-void viewNote (int nums[], int size)
+void Note viewNote (int nums[], int size)
 {
   int choice;
   listNotes(Note note_list[]);
@@ -64,3 +64,4 @@ void viewNote (int nums[], int size)
 
   }
 }
+LOOK AT PG 551
