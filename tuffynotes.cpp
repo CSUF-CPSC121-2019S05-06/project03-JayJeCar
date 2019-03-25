@@ -40,11 +40,11 @@ int main()
         break;
       case 'L':
       case 'l':
-        listNotes(); //Calling Second Function
+        listNotes(note_list[note_index++]); //Calling Second Function
         break;
       case 'V':
       case 'v':
-        viewNote(); //Calling Third Function
+        viewNote(note_list[note_index++]); //Calling Third Function
         break;
       case 'E':
       case 'e':

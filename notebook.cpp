@@ -1,7 +1,7 @@
 // Project Milestone 02
 // Jizzelle Cardenas
 // March 21, 2019
-// This project contains the implementation for the TuffyNotes project milestone 03
+// This project contains the code for the TuffyNotes project milestone 03
 // The program keeps track of notes entered.
 
 #include <iostream>
@@ -29,13 +29,12 @@ Note createNote()
   return note;
 }
 
-void Note listNotes(int nums[], int size) //Second function implemented to list all notes
+void Note::listNotes(std::string nums[], int size) //Second function implemented to list all notes
 {
   createNote(); //Calling the first function within this function
 
   int sum = 0;
-  const int sentinel_value = -1;
-
+  const int sentinel_value = -1; //Since the array starts at zero, negative one means that there are no notes
   std::cout << "Notes\n";
   for (int i = 0; i <= MAX_NUMBER_NOTES; i++)
   {
@@ -44,23 +43,28 @@ void Note listNotes(int nums[], int size) //Second function implemented to list 
       std::cout << "No notes have been added.\n";
     }
     sum += nums[i];
-    std::cout << (i+1) << ". " << nums[i] << std::endl;
+    std::cout << (i + 1) << ". " << nums[i] << std::endl;
   }
 }
 
-void Note viewNote (int nums[], int size) //Third function that uses second function to select and view a note
+int Note::viewNote (std::string nums[], int size) //Third function that uses second function to select and view a note{
 {
   int choice;
+  int index = -1;
   listNotes(int nums[], int size); //Calling Second Function
   std::cout << "Please input note index: \n";
   std::cin >> choice;
+
   if ((choice != 0) && (choice <= MAX_NUMBER_NOTES))
   {
   std::cout << "[" << nums[choice+1] << "]" << std::endl;
-  std::cout << note.getBody(nums[choice]);
+  std::cout << nums[choice].getBody();
+  index = choice;
+  break;
   }
   else
   {
     std::cout << "Invalid note index." << std::endl;
   }
+  return index;
 }
