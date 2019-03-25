@@ -1,20 +1,16 @@
 // Project Milestone 02
 // Jizzelle Cardenas
 // March 21, 2019
-// This project contains the implementation for the
-// TuffyNotes project milestone 02
-// The program repeatedly asks a user to create a note
-// until exit is selected.
-// The program also keeps track of all notes entered.
+// This project contains the implementation for the TuffyNotes project milestone 03
+// The program keeps track of notes entered.
 
 #include <iostream>
-
+#include <string>
 #include "notebook.hpp"
 
-//-------------------------------------
-// global function definitions
-//-------------------------------------
+// THe following are global functions
 
+//This function has no parameters according to the solution from Project 02
 Note createNote()
 {
   std::string title, body;
@@ -33,35 +29,31 @@ Note createNote()
   return note;
 }
 
-void Note listNotes(Note note_list[])
+void Note listNotes(int nums[], int size) //Second function implemented to list all notes
 {
-  Note createNote();
-  std::cout << "Notes\n";
+  createNote(); //Calling the first function within this function
+
   int sum = 0;
-  const in sentinel_value = -1;
-  for (int i = 0; i < MAX_NUMBER_NOTES; i++)
+  const int sentinel_value = -1;
+
+  std::cout << "Notes\n";
+  for (int i = 0; i <= MAX_NUMBER_NOTES; i++)
   {
-    if (note_list[i] == sentinel_value)
+    if (nums[i] == sentinel_value)
     {
       std::cout << "No notes have been added.\n";
     }
-    sum += note_list[i];
-    std::cout << sum << ". " << note_list[i] << std::endl;
+    sum += nums[i];
+    std::cout << (i+1) << ". " << nums[i] << std::endl;
   }
-
 }
 
-void Note viewNote (int nums[], int size)
+void Note viewNote (int nums[], int size) //Third function that uses second function to select and view a note
 {
   int choice;
-  listNotes(Note note_list[]);
+  listNotes(int nums[], int size); //Calling Second Function
   std::cout << "Please input note index: \n";
   std::cin >> choice;
-  for (int choice = 0; choice <= MAX_NUMBER_NOTES; choice++)
-  {
-    std::cout << (choice + 1) << ". ";
-    std::cin >> note_list[choice];
-
-  }
+  std::cout << "[" << nums[choice+1] << "]" << std::endl;
+  std::cout << Note.getBody(nums[choice]);
 }
-LOOK AT PG 551

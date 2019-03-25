@@ -1,11 +1,8 @@
 // Project Milestone 02
 // Jizzelle Cardenas
 // March 21, 2019
-// This project contains the implementation for the
-// TuffyNotes project milestone 02
-// The program repeatedly asks a user to create a note
-// until exit is selected.
-// The program also keeps track of all notes entered.
+// This project contains the implementation for the TuffyNotes project milestone 03
+// The program keeps track of notes entered.
 
 #include <string>
 
@@ -27,5 +24,5 @@ class Note
 
 // ask user to provide a note
 Note createNote();
-void listNotes();
-void viewNotes();
+void Note::listNotes(int nums[], int size);
+void Note::viewNotes(int nums[], int size);

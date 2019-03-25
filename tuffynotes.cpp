@@ -1,14 +1,11 @@
 // Project Milestone 02
 // Jizzelle Cardenas
 // March 21, 2019
-// This project contains the implementation for the TuffyNotes project milestone 02
-// The program repeatedly asks a user to create a note
-// until exit is selected.
-// The program also keeps track of all notes entered.
+// This project contains the implementation for the TuffyNotes project milestone 03
+// The program keeps track of notes entered.
 
 #include <iostream>
 #include <string>
-
 #include "notebook.hpp"
 
 int main()
@@ -31,11 +28,6 @@ int main()
     std::cout << "Choice: ";
     std::cin >> choice;
 
-    // ignore the newline char that follows the user input for choice, but
-    // also check for multiple character input - therefore, read in the rest
-    // of the line. this will handle the case where the user enters more than
-    // one character, and if that has occurred, treat it as invalid since we
-    // cannot assume the first char entered is the choice the user desires
     std::getline(std::cin, rem);
     if (rem.length() > 0) {
       choice = ' '; // set to invalid "choice"
@@ -48,11 +40,12 @@ int main()
         break;
       case 'L':
       case 'l':
-        list_note[note_list++] = listNotes();
+        listNotes(); //Calling Second Function
         break;
       case 'V':
       case 'v':
-        view_note[] = viewNote();
+        viewNote(); //Calling Third Function
+        break;
       case 'E':
       case 'e':
         display_menu = false;
@@ -61,7 +54,7 @@ int main()
         std::cout << "\nInvalid choice. Please try again.\n";
         break;
     }
-  } while (display_menu);
+  } while (display_menu); //Loops until user inputs 'e' or 'E' to exit
 
   std::cout << "\nThank you for using TuffyNotes!\n";
 
