@@ -55,5 +55,5 @@ void Note viewNote (int nums[], int size) //Third function that uses second func
   std::cout << "Please input note index: \n";
   std::cin >> choice;
   std::cout << "[" << nums[choice+1] << "]" << std::endl;
-  std::cout << Note.getBody(nums[choice]);
+  std::cout << note.getBody(nums[choice]);
 }
